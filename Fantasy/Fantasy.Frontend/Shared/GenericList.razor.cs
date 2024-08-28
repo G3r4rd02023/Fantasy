@@ -1,4 +1,6 @@
+using Fantasy.Shared.Resources;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
 
 namespace Fantasy.Frontend.Shared
 {
@@ -8,5 +10,6 @@ namespace Fantasy.Frontend.Shared
         [Parameter] public RenderFragment? NoRecords { get; set; }
         [EditorRequired, Parameter] public RenderFragment Body { get; set; } = null!;
         [EditorRequired, Parameter] public List<Titem> MyList { get; set; } = null!;
+        [Inject] private IStringLocalizer<Literals> Localizer { get; set; } = null!;
     }
 }
