@@ -30,7 +30,10 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
+    <script>
+        console.log("SweetAlert2 loaded:", typeof Swal !== 'undefined');
+    </script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
-
 </html>
