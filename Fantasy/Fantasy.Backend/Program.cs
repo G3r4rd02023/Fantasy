@@ -1,4 +1,8 @@
 using Fantasy.Backend.Data;
+using Fantasy.Backend.Repositories.Implementations;
+using Fantasy.Backend.Repositories.Interfaces;
+using Fantasy.Backend.UnitsOfWork.Implementations;
+using Fantasy.Backend.UnitsOfWork.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Fantasy.Backend
@@ -16,6 +20,10 @@ namespace Fantasy.Backend
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));
+
+            builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWork<>));
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

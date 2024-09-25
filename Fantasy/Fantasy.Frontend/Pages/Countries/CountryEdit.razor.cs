@@ -32,7 +32,7 @@ namespace Fantasy.Frontend.Pages.Countries
                 else
                 {
                     var messageError = await responseHttp.GetErrorMessageAsync();
-                    await SweetAlertService.FireAsync(Localizer["Error"], messageError, SweetAlertIcon.Error);
+                    await SweetAlertService.FireAsync(Localizer["Error"], Localizer[messageError!], SweetAlertIcon.Error);
                 }
             }
             else
