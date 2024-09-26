@@ -181,4 +181,22 @@
   <data name="RequiredField" xml:space="preserve">
     <value>El campo {0} es obligatorio.</value>
   </data>
+  <data name="ERR004" xml:space="preserve">
+    <value>El código del país no es válido.</value>
+  </data>
+  <data name="ERR005" xml:space="preserve">
+    <value>El código del equipo no es válido.</value>
+  </data>
+  <data name="Teams" xml:space="preserve">
+    <value>Equipos</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Seleccione un archivo</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="SelectACountry" xml:space="preserve">
+    <value>Selecciona un País</value>
+  </data>
 </root>

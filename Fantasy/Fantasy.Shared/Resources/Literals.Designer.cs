@@ -169,6 +169,24 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The country Id is not valid..
+        /// </summary>
+        public static string ERR004 {
+            get {
+                return ResourceManager.GetString("ERR004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The team Id is not valid..
+        /// </summary>
+        public static string ERR005 {
+            get {
+                return ResourceManager.GetString("ERR005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
         public static string Error {
@@ -277,6 +295,33 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Search.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Select a Country.
+        /// </summary>
+        public static string SelectACountry {
+            get {
+                return ResourceManager.GetString("SelectACountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Select a File.
+        /// </summary>
+        public static string SelectFile {
+            get {
+                return ResourceManager.GetString("SelectFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Soccer prediction app.
         /// </summary>
         public static string Subtitle {
@@ -291,6 +336,15 @@ namespace Fantasy.Shared.Resources {
         public static string Team {
             get {
                 return ResourceManager.GetString("Team", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Teams.
+        /// </summary>
+        public static string Teams {
+            get {
+                return ResourceManager.GetString("Teams", resourceCulture);
             }
         }
         

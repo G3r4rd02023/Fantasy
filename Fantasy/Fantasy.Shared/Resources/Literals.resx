@@ -201,4 +201,22 @@
   <data name="RequiredField" xml:space="preserve">
     <value>Field {0} is required.</value>
   </data>
+  <data name="ERR004" xml:space="preserve">
+    <value>The country Id is not valid.</value>
+  </data>
+  <data name="ERR005" xml:space="preserve">
+    <value>The team Id is not valid.</value>
+  </data>
+  <data name="Teams" xml:space="preserve">
+    <value>Teams</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Select a File</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SelectACountry" xml:space="preserve">
+    <value>Select a Country</value>
+  </data>
 </root>

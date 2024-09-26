@@ -1,9 +1,14 @@
 ﻿using Fantasy.Shared.Resources;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Fantasy.Shared.Entities
+namespace Fantasy.Shared.DTO
 {
-    public class Team
+    public class TeamDTO
     {
         public int Id { get; set; }
 
@@ -12,12 +17,10 @@ namespace Fantasy.Shared.Entities
         [Required(ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(Literals))]
         public string Name { get; set; } = null!;
 
+        [Display(Name = "Image", ResourceType = typeof(Literals))]
         public string? Image { get; set; }
 
-        public Country Country { get; set; } = null!;
-
+        [Display(Name = "Country", ResourceType = typeof(Literals))]
         public int CountryId { get; set; }
-
-        public string ImageFull => string.IsNullOrEmpty(Image) ? "/images/NoImage.png" : Image;
     }
 }
