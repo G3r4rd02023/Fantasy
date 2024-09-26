@@ -15,5 +15,9 @@ namespace Fantasy.Backend.Repositories.Interfaces
         Task<ActionResponse<Team>> GetAsync(int id);
 
         Task<ActionResponse<IEnumerable<Team>>> GetAsync();
+
+        Task<ActionResponse<IEnumerable<Team>>> GetAsync(PaginationDTO pagination);
+
+        Task<ActionResponse<int>> GetTotalRecordsAsync(PaginationDTO pagination);
     }
 }

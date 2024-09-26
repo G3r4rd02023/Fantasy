@@ -1,4 +1,5 @@
-﻿using Fantasy.Shared.Entities;
+﻿using Fantasy.Shared.DTO;
+using Fantasy.Shared.Entities;
 using Fantasy.Shared.Responses;
 
 namespace Fantasy.Backend.Repositories.Interfaces
@@ -10,5 +11,9 @@ namespace Fantasy.Backend.Repositories.Interfaces
         Task<ActionResponse<IEnumerable<Country>>> GetAsync();
 
         Task<IEnumerable<Country>> GetComboAsync();
+
+        Task<ActionResponse<IEnumerable<Country>>> GetAsync(PaginationDTO pagination);
+
+        Task<ActionResponse<int>> GetTotalRecordsAsync(PaginationDTO pagination);
     }
 }

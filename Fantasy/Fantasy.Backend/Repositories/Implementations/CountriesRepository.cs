@@ -1,5 +1,7 @@
 ﻿using Fantasy.Backend.Data;
+using Fantasy.Backend.Helpers;
 using Fantasy.Backend.Repositories.Interfaces;
+using Fantasy.Shared.DTO;
 using Fantasy.Shared.Entities;
 using Fantasy.Shared.Responses;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,7 @@ namespace Fantasy.Backend.Repositories.Implementations
         {
             var countries = await _context.Countries
                 .Include(c => c.Teams)
+                 .OrderBy(c => c.Name)
                 .ToListAsync();
             return new ActionResponse<IEnumerable<Country>>
             {
@@ -54,6 +57,44 @@ namespace Fantasy.Backend.Repositories.Implementations
             return await _context.Countries
                 .OrderBy(c => c.Name)
                 .ToListAsync();
+        }
+
+        public override async Task<ActionResponse<IEnumerable<Country>>> GetAsync(PaginationDTO pagination)
+        {
+            var queryable = _context.Countries
+                .Include(x => x.Teams)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(pagination.Filter))
+            {
+                queryable = queryable.Where(x => x.Name.ToLower().Contains(pagination.Filter.ToLower()));
+            }
+
+            return new ActionResponse<IEnumerable<Country>>
+            {
+                WasSuccess = true,
+                Result = await queryable
+                    .OrderBy(x => x.Name)
+                    .Paginate(pagination)
+                    .ToListAsync()
+            };
+        }
+
+        public async Task<ActionResponse<int>> GetTotalRecordsAsync(PaginationDTO pagination)
+        {
+            var queryable = _context.Countries.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(pagination.Filter))
+            {
+                queryable = queryable.Where(x => x.Name.ToLower().Contains(pagination.Filter.ToLower()));
+            }
+
+            double count = await queryable.CountAsync();
+            return new ActionResponse<int>
+            {
+                WasSuccess = true,
+                Result = (int)count
+            };
         }
     }
 }
