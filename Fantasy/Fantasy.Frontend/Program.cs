@@ -2,6 +2,7 @@ using CurrieTechnologies.Razor.SweetAlert2;
 using Fantasy.Frontend.Repositories;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using MudBlazor.Services;
 
 namespace Fantasy.Frontend
 {
@@ -18,6 +19,7 @@ namespace Fantasy.Frontend
             builder.Services.AddScoped<IRepository, Repository>();
             builder.Services.AddLocalization();
             builder.Services.AddSweetAlert2();
+            builder.Services.AddMudServices();
             await builder.Build().RunAsync();
         }
     }
